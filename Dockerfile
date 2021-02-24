@@ -2,7 +2,7 @@ FROM jazzdd/alpine-flask
 USER root
 COPY . /app/
 WORKDIR /app/
-RUN pip install --upgrade pip
+RUN pip3 install --upgrade pip3
 EXPOSE 80
-CMD [ "python","app.py"]
+CMD [ "python3","app.py"]
 
