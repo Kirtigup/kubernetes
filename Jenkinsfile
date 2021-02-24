@@ -1,6 +1,6 @@
 pipeline {
   environment {
-  IBM_CLOUD_REGION = 'eu-de'
+  IBM_CLOUD_REGION = 'us-south'
   REGISTRY_HOSTNAME = 'de.icr.io'
   IKS_CLUSTER = 'c0qh66ld080cha34sk8g'
   DEPLOYMENT_NAME = 'iks-test'
