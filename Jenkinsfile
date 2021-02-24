@@ -5,7 +5,7 @@ pipeline {
   IKS_CLUSTER = 'c0qh66ld080cha34sk8g'
   DEPLOYMENT_NAME = 'iks-test'
   PORT = '5001'
-  registry = "preranang/"
+  registry = "preranang/kube"
   registryCredential = 'Docker'
   dockerImage = ''
   }
@@ -51,7 +51,7 @@ pipeline {
         sh '''
             ibmcloud ks cluster config --cluster ${IKS_CLUSTER}
             kubectl config current-context
-            kubectl create deployment ${DEPLOYMENT_NAME} --image=srirammk18/flask-k8s:12 --dry-run -o yaml > deployment.yaml
+            kubectl create deployment ${DEPLOYMENT_NAME} --image=preranang/kube --dry-run -o yaml > deployment.yaml
             kubectl apply -f deployment.yaml
             kubectl rollout status deployment/${DEPLOYMENT_NAME}
             kubectl create service loadbalancer ${DEPLOYMENT_NAME} --tcp=80:${PORT} --dry-run -o yaml > service.yaml
