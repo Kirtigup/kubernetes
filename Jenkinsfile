@@ -2,7 +2,7 @@ pipeline {
   environment {
   IBM_CLOUD_REGION = 'us-south'
   REGISTRY_HOSTNAME = 'de.icr.io'
-  IKS_CLUSTER = 'c0qh66ld080cha34sk8g'
+  IKS_CLUSTER = 'c0sf25ud0fesivtjm07g'
   DEPLOYMENT_NAME = 'iks-test'
   PORT = '5001'
   registry = "preranang/kube"
